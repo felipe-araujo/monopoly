@@ -16,6 +16,8 @@ import lombok.Getter;
 @Getter
 public class Board {
 
+    private static final double BONUS = 200D;
+    private static final int TOTAL_ITERATIONS = 1500;
     private static final List<Square> squares = new ArrayList<>();
 
     static {
@@ -57,11 +59,11 @@ public class Board {
 
     public void run() {
 
-        for (int i = 0; i < 1500; i++) {
+        for (int i = 0; i < TOTAL_ITERATIONS; i++) {
             turns++;
             Integer increment = player.rollDice();
             if ((currentPosition + increment) >= squares.size()) {
-                player.credit(200D);
+                player.credit(BONUS);
                 currentPosition = (currentPosition + increment) % squares.size();
             } else {
                 currentPosition = currentPosition + increment;
@@ -83,7 +85,7 @@ public class Board {
     }
 
     private void printReport() {
-        System.out.println(String.format("Player finhshed with %f in cash and %d properties", player.getCash(),
+        System.out.println(String.format("Player finished with %.2f in cash and %d properties", player.getCash(),
                 player.getProperties().size()));
         System.out.println(String.format("Game finished after %d turns", turns));
     }

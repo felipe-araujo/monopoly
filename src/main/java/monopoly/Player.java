@@ -1,7 +1,7 @@
 package monopoly;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 import lombok.Getter;
@@ -10,11 +10,11 @@ import lombok.Getter;
 public class Player {
 
     private Double cash;
-    private List<Square> properties;
+    private Set<Square> properties;
 
     public Player() {
         this.cash = 1500D;
-        this.properties = new ArrayList<>();
+        this.properties = new HashSet<>();
     }
 
     public void charge(Double amount) {

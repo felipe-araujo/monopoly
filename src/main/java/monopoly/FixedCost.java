@@ -1,10 +1,16 @@
 package monopoly;
 
 import lombok.AllArgsConstructor;
-
+/**
+ * A kind of cost that consists on a fixed value.
+ *  
+*/
 @AllArgsConstructor
 public class FixedCost implements Cost {
     
+    /**
+     * Amount due
+    */
     private Double amount;
 
     @Override
@@ -22,7 +28,7 @@ public class FixedCost implements Cost {
     }
 
     public String toString(){
-        return String.format("Fixed cost(%f)", amount);
+        return String.format("Fixed cost(%.2f)", amount);
     }
     
 }

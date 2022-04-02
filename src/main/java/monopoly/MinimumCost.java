@@ -2,10 +2,24 @@ package monopoly;
 
 import lombok.AllArgsConstructor;
 
+/**
+ * A kind of cost that consists on a percentage of the cash owned by the user OR
+ * a minimum fixed value, whichever is greater.
+ * 
+ * 
+ */
 @AllArgsConstructor
 public class MinimumCost implements Cost {
 
+    /**
+     * @return Minimum value charged
+     * 
+     */
     private Double amount;
+    /**
+     * @return Percentage of user cash due.
+     * 
+     */
     private Double percentage;
 
     @Override
@@ -26,8 +40,8 @@ public class MinimumCost implements Cost {
         return player.getCash() >= finalAmount(player);
     }
 
-    public String toString(){
-        return String.format("MinimumCost(%f or %f %% of total)", amount, percentage * 100);
+    public String toString() {
+        return String.format("MinimumCost(%.2f or %.2f %% of total)", amount, percentage * 100);
     }
 
 }
