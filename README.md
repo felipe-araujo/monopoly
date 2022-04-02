@@ -10,8 +10,8 @@ This project targets Java 11.
 
 On the project root:
 
-´mvn clean install´
+```mvn clean install```
 
 # How to run
 
-´java -jar target/monopoly-1.0-SNAPSHOT.jar´
+```java -jar target/monopoly-1.0-SNAPSHOT.jar```
